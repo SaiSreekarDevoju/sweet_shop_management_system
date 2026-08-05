@@ -2,7 +2,7 @@
 
 A full-stack application for managing a sweet shop, built with Node.js, Express, and React.
 
-## Project Link: Link access is for Collaboraters only!
+## Project Link: Link access is for Collaborators only!
 
 ## Project Overview
 
