@@ -2,7 +2,7 @@
 
 A full-stack application for managing a sweet shop, built with Node.js, Express, and React.
 
-## Project Link: https://sweet-shop-management-system-smoky.vercel.app/
+## Project Link: Link access is for Collaboraters only!
 
 ## Project Overview
 
