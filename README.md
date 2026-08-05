@@ -79,7 +79,7 @@ This project implements a Sweet Shop Management System with the following featur
    - Frontend: `cd frontend && npm run dev` (Runs on port 5173)
 
 6. **Access the App:**
-   - Open your browser at `http://localhost:5173`.
+   - Open your browser at `Link - For Colaborators Only!`.
 
 ## Admin Access
 To access the Admin Panel:
