@@ -147,7 +147,3 @@ npm test
 
 ### Reflection on AI Impact
 AI significantly accelerated the development lifecycle of this project. It removed much of the friction associated with boilerplate code and configuration, allowing me to focus on the core business logic and user experience. It acted as a tireless pair programmer, offering suggestions and catching potential issues before they became bugs. However, I maintained full control over the architectural decisions and manually reviewed all AI-generated code to ensure it adhered to best practices and project requirements. Using AI made the workflow more efficient and educational, as it often suggested modern solutions I might not have initially considered.
-
----
-
-**Note**: For transparency, commits where AI played a significant role in code generation include `Co-authored-by` trailers in the commit message.
