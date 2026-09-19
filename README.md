@@ -2,7 +2,9 @@
 
 A full-stack application for managing a sweet shop, built with Node.js, Express, and React.
 
-## Project Link: Link access is for Collaborators only!
+## Project Link
+
+The deployed project link is restricted to collaborators.
 
 ## Project Overview
 
@@ -11,7 +13,7 @@ This project implements a Sweet Shop Management System with the following featur
 - **Sweet Management**: Browse, search (by name, category, and price range), and view sweets.
 - **Inventory Management**: Purchase sweets (decreasing stock) and restock (admin only).
 - **Admin Panel**: Dedicated interface for administrators to add, update, and delete sweets.
-- **Dark Mode**: Fully supported dark mode for better user experience.
+- **Dark Mode**: Fully supported dark mode for a better user experience.
 - **Responsive Design**: Works on desktop and mobile devices.
 
 ## Tech Stack
@@ -34,7 +36,7 @@ This project implements a Sweet Shop Management System with the following featur
 ## Setup Instructions
 
 ### Prerequisites
-- Node.js (v14+)
+- Node.js 14 or later
 - npm
 
 ### Quick Start
@@ -56,9 +58,10 @@ This project implements a Sweet Shop Management System with the following featur
    ```
 
 3. **Environment Setup:**
-   - The backend is configured to run on port `5000`.
-   - The frontend connects to `http://localhost:5000`.
-   - Create a `.env` file in `backend` and `frontend` if needed (defaults are provided).
+   - The backend runs on port `5000` by default.
+   - The frontend connects to `http://localhost:5000` by default.
+   - Create `.env` files in `backend` and `frontend` when local configuration is required.
+   - Use the repository's existing environment variable names and keep credentials out of version control.
 
 4. **Database Setup & Seeding:**
    To set up the database and create the initial admin user:
@@ -67,7 +70,7 @@ This project implements a Sweet Shop Management System with the following featur
    npx prisma migrate dev --name init
    npx prisma db seed
    ```
-   *Note: This creates an admin user with username: `admin` and password: `admin123`.*
+   The seed command creates the initial development admin account. Set or change its credentials through the project's seed/configuration files before sharing the environment or deploying it.
 
 5. **Start the Application:**
    You can run both backend and frontend concurrently from the root directory:
@@ -75,19 +78,17 @@ This project implements a Sweet Shop Management System with the following featur
    npm run dev
    ```
    Alternatively, run them separately:
-   - Backend: `cd backend && npm run dev` (Runs on port 5000)
-   - Frontend: `cd frontend && npm run dev` (Runs on port 5173)
+   - Backend: `cd backend && npm run dev` (runs on port 5000)
+   - Frontend: `cd frontend && npm run dev` (runs on port 5173)
 
 6. **Access the App:**
-   - Open your browser at `Link - For Colaborators Only!`.
+   - Open the collaborator-only deployment link, or use the local frontend URL shown by Vite.
 
 ## Admin Access
-To access the Admin Panel:
-1. Log in with the following credentials:
-   - **Username**: `admin`
-   - **Password**: `admin123`
-2. Once logged in, click the "Admin" link in the navigation bar.
-3. You will have full access to add, edit, and delete sweets.
+
+Use the administrator credentials configured for your local or deployed environment. Do not copy passwords into documentation, issue descriptions, screenshots, or source control.
+
+After logging in, open the **Admin** link in the navigation bar to manage sweets and inventory.
 
 ## Features Breakdown
 
@@ -103,9 +104,10 @@ To access the Admin Panel:
 - **Edit Sweet**: Update details, price, and stock levels.
 - **Delete Sweet**: Remove items from inventory.
 - **Stock Alerts**: Visual indicators for low stock and out-of-stock items.
-- **Add Images**: Can add images of the items.
+- **Add Images**: Add images for inventory items.
 
 ## Testing
+
 To run the backend tests:
 ```bash
 cd backend
@@ -118,8 +120,8 @@ npm test
 1. Push your code to GitHub.
 2. Import the repository in Vercel.
 3. Configure the **Root Directory** to `frontend`.
-4. The Build Command should automatically detect `npm run build`.
-5. The Output Directory should automatically detect `dist`.
+4. The build command should detect `npm run build` automatically.
+5. The output directory should be `dist`.
 6. Deploy.
 
 ### Backend (Render)
@@ -129,7 +131,7 @@ npm test
 4. Configure the **Root Directory** to `backend`.
 5. **Build Command**: `npm install && npm run build`
 6. **Start Command**: `npm start`
-7. Add Environment Variables (if any).
+7. Add the required environment variables.
 8. Deploy.
 
 ## My AI Usage
@@ -141,9 +143,9 @@ npm test
 ### How They Were Used
 - **Project Scaffolding**: I used Trae to brainstorm the initial project structure and generate the base configuration for both the Express backend and React frontend.
 - **API Development**: AI assisted in defining RESTful API endpoints and structuring the Prisma schema for efficient data modeling.
-- **Frontend Logic**: Copilot helped generate React components and hooks, speeding up the implementation of features like the Shopping Cart context and Authentication flows.
-- **Testing**: AI tools were used to generate unit test templates for the backend routes and frontend components, ensuring high code coverage.
-- **Debugging**: When encountering errors (e.g., CORS issues or type mismatches), I used Trae to analyze the error logs and suggest fixes.
+- **Frontend Logic**: Copilot helped generate React components and hooks, speeding up the implementation of features like the Shopping Cart context and authentication flows.
+- **Testing**: AI tools were used to generate unit test templates for the backend routes and frontend components, helping improve coverage.
+- **Debugging**: When encountering errors (for example, CORS issues or type mismatches), I used Trae to analyze the error logs and suggest fixes.
 
 ### Reflection on AI Impact
 AI significantly accelerated the development lifecycle of this project. It removed much of the friction associated with boilerplate code and configuration, allowing me to focus on the core business logic and user experience. It acted as a tireless pair programmer, offering suggestions and catching potential issues before they became bugs. However, I maintained full control over the architectural decisions and manually reviewed all AI-generated code to ensure it adhered to best practices and project requirements. Using AI made the workflow more efficient and educational, as it often suggested modern solutions I might not have initially considered.
