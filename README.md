@@ -2,28 +2,33 @@
 
 A full-stack application for managing a sweet shop, built with Node.js, Express, and React.
 
-## Project Link: Link access is for Collaborators only!
+## Project Link
+
+The deployed project link is currently available to collaborators only.
 
 ## Project Overview
 
 This project implements a Sweet Shop Management System with the following features:
-- **User Authentication**: Register and login with JWT-based authentication.
-- **Sweet Management**: Browse, search (by name, category, and price range), and view sweets.
-- **Inventory Management**: Purchase sweets (decreasing stock) and restock (admin only).
-- **Admin Panel**: Dedicated interface for administrators to add, update, and delete sweets.
-- **Dark Mode**: Fully supported dark mode for better user experience.
-- **Responsive Design**: Works on desktop and mobile devices.
+
+- **User Authentication**: Register and log in with JWT-based authentication.
+- **Sweet Management**: Browse, search by name or category, filter by price range, and view sweets.
+- **Inventory Management**: Purchase sweets to decrease stock and restock items as an administrator.
+- **Admin Panel**: Add, update, and delete sweets from a dedicated admin interface.
+- **Dark Mode**: Supports a dark theme for the user interface.
+- **Responsive Design**: Works across desktop and mobile screen sizes.
 
 ## Tech Stack
 
 ### Backend
+
 - **Node.js & TypeScript**: Core runtime and language.
 - **Express**: Web framework.
 - **SQLite & Prisma**: Database and ORM.
 - **Jest & Supertest**: Testing framework.
-- **JWT & Bcrypt**: Authentication and security.
+- **JWT & bcrypt**: Authentication and password security.
 
 ### Frontend
+
 - **React (Vite)**: Frontend framework.
 - **TypeScript**: Type safety.
 - **Tailwind CSS**: Styling.
@@ -34,7 +39,8 @@ This project implements a Sweet Shop Management System with the following featur
 ## Setup Instructions
 
 ### Prerequisites
-- Node.js (v14+)
+
+- Node.js 14 or later
 - npm
 
 ### Quick Start
@@ -42,71 +48,95 @@ This project implements a Sweet Shop Management System with the following featur
 1. **Clone the repository.**
 
 2. **Install dependencies:**
+
    ```bash
-   # Root
-   npm install
-
-   # Backend
-   cd backend
-   npm install
-
-   # Frontend
-   cd ../frontend
-   npm install
+   # Install root tooling and all project dependencies
+   npm run install-all
    ```
 
-3. **Environment Setup:**
-   - The backend is configured to run on port `5000`.
-   - The frontend connects to `http://localhost:5000`.
-   - Create a `.env` file in `backend` and `frontend` if needed (defaults are provided).
+   You can also install each workspace separately:
 
-4. **Database Setup & Seeding:**
-   To set up the database and create the initial admin user:
+   ```bash
+   npm install
+   cd backend && npm install
+   cd ../frontend && npm install
+   ```
+
+3. **Environment setup:**
+
+   - The backend runs on port `5000` by default.
+   - The frontend runs on Vite's default development port, `5173`.
+   - The frontend should use the backend base URL `http://localhost:5000`.
+   - Create environment files in `backend` and `frontend` only when local configuration overrides are required.
+   - Keep secrets and local credentials out of version control.
+
+4. **Database setup and seeding:**
+
+   From the backend directory, run:
+
    ```bash
    cd backend
    npx prisma migrate dev --name init
    npx prisma db seed
    ```
-   *Note: This creates an admin user with username: `admin` and password: `admin123`.*
 
-5. **Start the Application:**
-   You can run both backend and frontend concurrently from the root directory:
+   The seed command creates the initial development data. Check the seed/configuration files for the current local admin setup instead of relying on credentials copied from this README.
+
+5. **Start the application:**
+
+   Run both applications from the repository root:
+
    ```bash
    npm run dev
    ```
-   Alternatively, run them separately:
-   - Backend: `cd backend && npm run dev` (Runs on port 5000)
-   - Frontend: `cd frontend && npm run dev` (Runs on port 5173)
 
-6. **Access the App:**
-   - Open your browser at `Link - For Colaborators Only!`.
+   Or run them separately:
+
+   ```bash
+   # Backend
+   cd backend && npm run dev
+
+   # Frontend
+   cd frontend && npm run dev
+   ```
+
+6. **Access the app:**
+
+   Open the local frontend URL printed by Vite, normally `http://localhost:5173`.
 
 ## Admin Access
+
 To access the Admin Panel:
-1. Log in with the following credentials:
-   - **Username**: `admin`
-   - **Password**: `admin123`
-2. Once logged in, click the "Admin" link in the navigation bar.
-3. You will have full access to add, edit, and delete sweets.
+
+1. Start the backend and frontend.
+2. Use the development admin account created by the backend seed configuration.
+3. Log in and select the **Admin** link in the navigation bar.
+4. Use the panel to add, edit, and delete sweets.
+
+Do not commit real credentials or publish development passwords in documentation.
 
 ## Features Breakdown
 
 ### Customer Features
-- **Browse Sweets**: View all available sweets.
-- **Search & Filter**: Search by name or filter by category/price.
-- **Purchase**: Buy sweets (stock updates automatically).
+
+- **Browse Sweets**: View available inventory.
+- **Search and Filter**: Search by name or filter by category and price.
+- **Purchase**: Buy sweets and update stock automatically.
 - **Dark Mode**: Toggle between light and dark themes.
 
 ### Admin Features
-- **Dashboard**: View all inventory with stock status.
+
+- **Dashboard**: View inventory and stock status.
 - **Add Sweet**: Create new inventory items.
-- **Edit Sweet**: Update details, price, and stock levels.
-- **Delete Sweet**: Remove items from inventory.
-- **Stock Alerts**: Visual indicators for low stock and out-of-stock items.
-- **Add Images**: Can add images of the items.
+- **Edit Sweet**: Update details, prices, and stock levels.
+- **Delete Sweet**: Remove inventory items.
+- **Stock Alerts**: Identify low-stock and out-of-stock items.
+- **Add Images**: Attach product images to inventory items.
 
 ## Testing
+
 To run the backend tests:
+
 ```bash
 cd backend
 npm test
@@ -115,35 +145,40 @@ npm test
 ## Deployment
 
 ### Frontend (Vercel)
-1. Push your code to GitHub.
-2. Import the repository in Vercel.
-3. Configure the **Root Directory** to `frontend`.
-4. The Build Command should automatically detect `npm run build`.
-5. The Output Directory should automatically detect `dist`.
-6. Deploy.
+
+1. Push the repository to GitHub.
+2. Import the repository into Vercel.
+3. Set the **Root Directory** to `frontend`.
+4. Use the detected build command, or run `npm run build`.
+5. Use `dist` as the output directory.
+6. Configure any required environment variables and deploy.
 
 ### Backend (Render)
-1. Push your code to GitHub.
+
+1. Push the repository to GitHub.
 2. Create a new Web Service in Render.
-3. Connect your repository.
-4. Configure the **Root Directory** to `backend`.
-5. **Build Command**: `npm install && npm run build`
-6. **Start Command**: `npm start`
-7. Add Environment Variables (if any).
+3. Connect the repository.
+4. Set the **Root Directory** to `backend`.
+5. Use `npm install && npm run build` as the build command.
+6. Use `npm start` as the start command.
+7. Add the required environment variables.
 8. Deploy.
 
 ## My AI Usage
 
 ### AI Tools Used
-- **Trae (IDE & Assistant)**: Used as the primary coding assistant for generating boilerplate, refactoring, and debugging.
-- **GitHub Copilot**: Used for intelligent code completion and suggestions during development.
+
+- **Trae (IDE & Assistant)**: Used for boilerplate generation, refactoring, and debugging.
+- **GitHub Copilot**: Used for code-completion suggestions during development.
 
 ### How They Were Used
-- **Project Scaffolding**: I used Trae to brainstorm the initial project structure and generate the base configuration for both the Express backend and React frontend.
-- **API Development**: AI assisted in defining RESTful API endpoints and structuring the Prisma schema for efficient data modeling.
-- **Frontend Logic**: Copilot helped generate React components and hooks, speeding up the implementation of features like the Shopping Cart context and Authentication flows.
-- **Testing**: AI tools were used to generate unit test templates for the backend routes and frontend components, ensuring high code coverage.
-- **Debugging**: When encountering errors (e.g., CORS issues or type mismatches), I used Trae to analyze the error logs and suggest fixes.
+
+- **Project Scaffolding**: Assisted with the initial project structure and base configuration for the Express backend and React frontend.
+- **API Development**: Assisted with REST endpoint design and Prisma schema structure.
+- **Frontend Logic**: Assisted with React components and hooks for the shopping cart and authentication flows.
+- **Testing**: Assisted with unit-test templates for backend routes and frontend components.
+- **Debugging**: Assisted with investigating issues such as CORS errors and type mismatches.
 
 ### Reflection on AI Impact
-AI significantly accelerated the development lifecycle of this project. It removed much of the friction associated with boilerplate code and configuration, allowing me to focus on the core business logic and user experience. It acted as a tireless pair programmer, offering suggestions and catching potential issues before they became bugs. However, I maintained full control over the architectural decisions and manually reviewed all AI-generated code to ensure it adhered to best practices and project requirements. Using AI made the workflow more efficient and educational, as it often suggested modern solutions I might not have initially considered.
+
+AI reduced boilerplate work and helped identify implementation issues during development. All generated suggestions were reviewed manually before being included in the project, and architectural decisions remained under developer control.
